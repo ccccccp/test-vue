@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld @Add="Add" :count="count"/>
   </div>
 </template>
 
@@ -12,6 +12,17 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  data(){
+    return {
+      name:'app',
+      count:0
+    }
+  },
+  methods:{
+    Add(){
+      this.count = this.count +1
+    }
   }
 }
 </script>
